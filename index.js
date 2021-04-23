@@ -2,7 +2,7 @@ console.log('grab all pokemon test, imported')
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#generate-pokemon');
+    let generateBtn = document.querySelector('#generate-all-pokemon');
     generateBtn.addEventListener('click', renderEverything)
 
     getDeleteBtn().addEventListener('click', deleteEverything);
@@ -88,8 +88,8 @@ function deleteEverything(event){
     allPokemonContainer.innerText = ""
 
     let generateBtn = document.createElement('button')
-    generateBtn.innerText = "Generate Pokemon"
-    generateBtn.id = 'generate-pokemon'
+    generateBtn.innerText = "Generate All Pokemon"
+    generateBtn.id = 'generate-all-pokemon'
     generateBtn.classList.add('ui', 'secondary', 'button')
     generateBtn.addEventListener('click', renderEverything);
 

@@ -88,8 +88,8 @@ function deleteEverything(event){
     allPokemonContainer.innerText = ""
 
     let generateBtn = document.createElement('button')
-    generateBtn.innerText = "Generate Pokemon"
-    generateBtn.id = 'generate-pokemon'
+    generateBtn.innerText = "Generate Galar Pokemon"
+    generateBtn.id = 'galar'
     generateBtn.classList.add('ui', 'secondary', 'button')
     generateBtn.addEventListener('click', renderEverything);
 
