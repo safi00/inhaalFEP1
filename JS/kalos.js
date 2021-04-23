@@ -1,4 +1,4 @@
-console.log('You have connected...')
+console.log('kalos test, imported')
 
 document.addEventListener("DOMContentLoaded", () =>{
 
@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 })
 
 function renderEverything(){
+    console.log('kalos test, debug run')
     let allPokemonContainer = document.querySelector('#poke-container')
     allPokemonContainer.innerText = "";
-    fetchKantoPokemon();
+    fetchKalosPokemon();
 
     getDeleteBtn().style.display = 'block'
 }
@@ -21,8 +22,8 @@ function getDeleteBtn(){
 }
 
 
-function fetchKantoPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?offset=649&limit=72')
+function fetchKalosPokemon(){
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=493&limit=166')
     .then(response => response.json())
     .then(function(allpokemon){
         allpokemon.results.forEach(function(pokemon){
@@ -32,8 +33,7 @@ function fetchKantoPokemon(){
 }
 
 function fetchPokemonData(pokemon){
-    let url = pokemon.url // <--- this is saving the pokemon url to a variable to use in the fetch. 
-                                //Example: https://pokeapi.co/api/v2/pokemon/1/"
+    let url = pokemon.url // pokemon url waar we de dier uit pakt
     fetch(url)
     .then(response => response.json())
     .then(function(pokeData){
@@ -44,24 +44,23 @@ function fetchPokemonData(pokemon){
 
 function renderPokemon(pokeData){
     let allPokemonContainer = document.getElementById('poke-container');
-    let pokeContainer = document.createElement("div") //div will be used to hold the data/details for indiviual pokemon.{}
+    let pokeContainer = document.createElement("div")
     pokeContainer.classList.add('ui', 'card');
 
     createPokeImage(pokeData.id, pokeContainer);
 
+    //TODO find away to make this buttons work
     let pokeName = document.createElement("BUTTON")
     pokeName.innerText = pokeData.name
 
     let pokeNumber = document.createElement('p')
     pokeNumber.innerText = `#${pokeData.id}`
    
-    let pokeTypes = document.createElement('ul') //ul list will hold the pokemon types
-  
-
-    createTypes(pokeData.types, pokeTypes) // helper function to go through the types array and create li tags for each one
+    let pokeTypes = document.createElement('ul')
+    createTypes(pokeData.types, pokeTypes) 
 
     pokeContainer.append(pokeName, pokeNumber, pokeTypes);   //appending all details to the pokeContainer div
-    allPokemonContainer.appendChild(pokeContainer);       //appending that pokeContainer div to the main div which will                                                             hold all the pokemon cards
+    allPokemonContainer.appendChild(pokeContainer);
 }
 
 function createTypes(types, ul){

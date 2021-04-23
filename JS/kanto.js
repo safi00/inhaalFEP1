@@ -1,4 +1,4 @@
-console.log('You have connected...')
+console.log('kalos test, imported')
 
 document.addEventListener("DOMContentLoaded", () =>{
 
@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 })
 
 function renderEverything(){
+    console.log('kanto test, debug running')
     let allPokemonContainer = document.querySelector('#poke-container')
     allPokemonContainer.innerText = "";
     fetchKantoPokemon();
