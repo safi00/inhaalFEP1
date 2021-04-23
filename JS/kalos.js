@@ -2,7 +2,7 @@ console.log('You have connected...')
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#alola');
+    let generateBtn = document.querySelector('#kalos');
     generateBtn.addEventListener('click', renderEverything)
 
     getDeleteBtn().addEventListener('click', deleteEverything);
@@ -22,7 +22,7 @@ function getDeleteBtn(){
 
 
 function fetchKantoPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?offset=721&limit=88')
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=649&limit=72')
     .then(response => response.json())
     .then(function(allpokemon){
         allpokemon.results.forEach(function(pokemon){
