@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon Experiment</title>
+    <script src="JS/search.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="bar">
+            <button id="home" name="home" class="bar-item" onclick="location.href='/index.html'" type="button">Home</button>
+            <button id="search-btn" name="search-btn" class="bar-item highlightButton" onclick="window.location.reload();" type="button">Search</button>
+            <button id="delete-btn" name="search-btn"class="bar-item logoutButton">Delete</button>
+        </div>
+    </div>
+    <div id="header" style="padding:50px 16px">
+        <h1 class="jumbo" id="header-text">ALL Pokemon</h1>
+    </div>
+    <div id="container">
+        <div id="poke-container" class="ui cards">
+            <form id="POSTLoginForm" method="post">
+                <input class="poke name" type="text" name="pokename" placeholder="pokename" required="">
+                <button id="generate-pokemon" name="generate-pokemon" class="bar-item" type="button">Generate Pokemon</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
