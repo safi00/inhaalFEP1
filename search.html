@@ -17,14 +17,15 @@
         </div>
     </div>
     <div id="header" style="padding:50px 16px">
-        <h1 class="jumbo" id="header-text">ALL Pokemon</h1>
+        <h1 class="jumbo" id="header-text">Search page</h1>
+        <form id="searchForm" name="searchForm" method="post">
+            <input class="poke name" type="text" name="pokename" placeholder="pokename" required>
+            <input id="generate-pokemon" name="generate-pokemon" class="bar-item" type="button">Generate Pokemon</button>
+        </form>
     </div>
     <div id="container">
         <div id="poke-container" class="ui cards">
-            <form id="POSTLoginForm" method="post">
-                <input class="poke name" type="text" name="pokename" placeholder="pokename" required="">
-                <button id="generate-pokemon" name="generate-pokemon" class="bar-item" type="button">Generate Pokemon</button>
-            </form>
+    
         </div>
     </div>
 </body>

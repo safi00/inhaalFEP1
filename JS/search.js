@@ -1,5 +1,13 @@
 console.log('script imported')
 
+function seachFunction() {
+  const x = document.getElementById("searchForm");
+  console.log(x.elements[0].value);
+  let pokemonName = x.elements[0].value
+  let returnValue = '' + pokemonName
+  return returnValue
+}
+
 document.addEventListener("DOMContentLoaded", () =>{
 
     let generateBtn = document.querySelector('#generate-pokemon');
@@ -20,9 +28,9 @@ function renderAll(){
 function getDeleteBtn(){
     return document.querySelector('#delete-btn')
 }
-
+// https://pokeapi.co/api/v2/pokemon/ditto
 function fetchAllPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=898')
+    fetch('https://pokeapi.co/api/v2/pokemon/' + seachFunction())
     .then(response => response.json())
     .then(function(allpokemon){
         allpokemon.results.forEach(function(pokemon){
@@ -84,12 +92,4 @@ function deleteEverything(event){
     event.target.style = 'none';
     let allPokemonContainer = document.querySelector('#poke-container')
     allPokemonContainer.innerText = ""
-
-    let generateBtn = document.createElement('button')
-    generateBtn.innerText = "Generate All Pokemon"
-    generateBtn.id = 'generate-all-pokemon'
-    generateBtn.classList.add('ui', 'secondary', 'button')
-    generateBtn.addEventListener('click', renderAll);
-
-    allPokemonContainer.append(generateBtn)
 }
