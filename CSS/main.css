@@ -16,7 +16,7 @@ ol, ul {
 }
 
 img {
-    max-width: 75%;
+    max-width: 86%;
 }
 
 body {
@@ -206,7 +206,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
     color: #3b5c2a;
     background-color: rgb(148, 145, 145)
 }
-.highlightButton:active, .logoutButton:active, .bar-item:active, .search-item:active {
+.highlightButton:active, .globalButton:active, .logoutButton:active, .bar-item:active, .search-item:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
@@ -291,15 +291,61 @@ label {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
-}
-
-#generate-pokemon {
-    margin: 0 auto;
-}
+    grid-template-areas:
+      "Nothing-Left GlobalDexButton Nothing-Right"
+      ". . ."
+      ". . .";
+  }
+  .GlobalDexButton { grid-area: Button; }
+  .Nothing-Right { grid-area: Nothing-Right; }
+  .Nothing-Left { grid-area: Nothing-Left; }
 
 #delete-btn {
     position: absolute;
     left: 85%;
     display: none;
     margin-bottom: 5%;
+}
+.generate-all-pokemon{
+    margin: 0 auto;
+}
+
+.globalButton {
+    padding:8px 16px;
+    float:left;
+    width:auto;
+    border:none;
+    display:block;
+    outline:0;
+    grid-area: Button;
+    margin: 0 auto;
+}
+
+.globalButton{
+    margin: 0 auto;
+    font-weight: 900;
+    white-space:normal;
+    display:block;
+    padding:8px 16px;
+    text-align:left;
+    border:none;
+    white-space:normal;
+    float:none;
+    outline:0;
+    text-align:center;
+    width:100%;
+    grid-area: Button;
+}
+
+.globalButton{
+    color:rgb(95, 91, 91);
+    grid-area: Button;
+    margin: 0 auto;
+}
+
+.globalButton:hover{
+    margin: 0 auto;
+    color:#000;
+    background-color:rgba(43, 61, 57, 0.719);
+    grid-area: Button;
 }

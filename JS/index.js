@@ -264,7 +264,7 @@ function renderPokemon(pokeData){
     createPokeImage(pokeData.id, pokeContainer);
 
     //TODO find away to make this buttons work
-    let pokeName = document.createElement("BUTTON")
+    let pokeName = document.createElement("button")
     pokeName.innerText = pokeData.name
 
     let pokeNumber = document.createElement('p')
@@ -272,6 +272,9 @@ function renderPokemon(pokeData){
    
     let pokeTypes = document.createElement('ul')
     createTypes(pokeData.types, pokeTypes) 
+    
+
+    pokeName.id = `${pokeData.id}` + `${pokeData.name}`
 
     pokeContainer.append(pokeName, pokeNumber, pokeTypes);   //appending all details to the pokeContainer div
     allPokemonContainer.appendChild(pokeContainer);
