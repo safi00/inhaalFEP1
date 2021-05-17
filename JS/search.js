@@ -1,9 +1,9 @@
 console.log('script imported')
 
 function seachFunction() {
-  const x = document.getElementById("searchForm");
-  console.log(x.elements[0].value);
-  let pokemonName = x.elements[0].value
+  const seachedPokemonName = document.getElementById("searchForm");
+  console.log('searching for : "'+seachedPokemonName.elements[0].value + '"');
+  let pokemonName = seachedPokemonName.elements[0].value
   let returnValue = '' + pokemonName
   return returnValue
 }
@@ -11,65 +11,65 @@ function seachFunction() {
 document.addEventListener("DOMContentLoaded", () =>{
 
     let generateBtn = document.querySelector('#generate-pokemon');
-    generateBtn.addEventListener('click', renderAll)
+    generateBtn.addEventListener('click', renderSeachedPokemon)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
-function renderAll(){
-    console.log('search pokemon test, debug runs')
-    let allPokemonContainer = document.querySelector('#poke-container')
+function renderSeachedPokemon(){
+    let allPokemonContainer = document.querySelector('#search-container')
     allPokemonContainer.innerText = "";
-    fetchAllPokemon();
+    fetchSeachedPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
 }
 
-function getDeleteBtn(){
+function displayDeleteButton(){
     return document.querySelector('#delete-btn')
 }
-// https://pokeapi.co/api/v2/pokemon/ditto
-function fetchAllPokemon(){
+
+function fetchSeachedPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon/' + seachFunction())
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
-        })
+    .then(function(pokemon){
+        parseRenderedInfo(pokemon)
     })
 }
 
-function fetchPokemonData(pokemon){
-    let url = pokemon.url // pokemon url waar we de dier uit pakt
-    fetch(url)
-    .then(response => response.json())
-    .then(function(pokeData){
-        renderPokemon(pokeData)
-    })
-}
-
-function renderPokemon(pokeData){
-    let allPokemonContainer = document.getElementById('poke-container');
+function parseRenderedInfo(pokeData){
+    let allPokemonContainer = document.getElementById('search-container');
     let pokeContainer = document.createElement("div")
     pokeContainer.classList.add('ui', 'card');
 
-    createPokeImage(pokeData.id, pokeContainer);
+    grabPokemonSprite(pokeData.id, pokeContainer);
+    grabPokemonShinySprite(pokeData.id, pokeContainer);
 
-    //TODO find away to make this buttons work
-    let pokeName = document.createElement("BUTTON")
-    pokeName.innerText = pokeData.name
+    let pokemonName = document.createElement('h3')
+    pokemonName.innerText = " #" + pokeData.id + " " + pokeData.name
 
-    let pokeNumber = document.createElement('p')
-    pokeNumber.innerText = `#${pokeData.id}`
-   
-    let pokeTypes = document.createElement('ul')
-    createTypes(pokeData.types, pokeTypes) 
+    let pokemonTypes = document.createElement('ul')
+    grabPokemonTypes(pokeData.types, pokemonTypes) 
 
-    pokeContainer.append(pokeName, pokeNumber, pokeTypes);   //appending all details to the pokeContainer div
+    let pokemonAbilities = document.createElement('ul')
+    grabPokemonAbilities(pokeData.abilities, pokemonAbilities) 
+
+    let pokemonMoves = document.createElement('ul')
+    createPokemonMoves(pokeData.moves, pokemonMoves) 
+
+    let typeLabel = document.createElement("label")
+    typeLabel.innerText = "type(s):"
+
+    let abilityLabel = document.createElement("label")
+    abilityLabel.innerText = "Possible pokemon abilities:"
+
+    let moveLabel = document.createElement("label")
+    moveLabel.innerText = "Learnable pokemon moves:"
+
+    pokeContainer.append(pokemonName, typeLabel, pokemonTypes, abilityLabel, pokemonAbilities, moveLabel, pokemonMoves);   //appending all details to the pokeContainer div
     allPokemonContainer.appendChild(pokeContainer);
 }
 
-function createTypes(types, ul){
+function grabPokemonTypes(types, ul){
     types.forEach(function(type){
         let typeLi = document.createElement('li');
         typeLi.innerText = type['type']['name'];
@@ -77,19 +77,47 @@ function createTypes(types, ul){
     })
 }
 
-function createPokeImage(pokeID, containerDiv){
-    let pokeImgContainer = document.createElement('div')
-    pokeImgContainer.classList.add('image')
+function grabPokemonAbilities(abilities, ul){
+    abilities.forEach(function(ability){
+        let abilityLi = document.createElement('li');
+        abilityLi.innerText = ability['ability']['name'];
+        ul.append(abilityLi)
+    })
+}
 
-    let pokeImage = document.createElement('img')
-    pokeImage.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeID}.png`
+function createPokemonMoves(moves, ul){
+    moves.forEach(function(move){
+        let moveLi = document.createElement('li');
+        moveLi.innerText = move['move']['name']
+        ul.append(moveLi)
+    })
+}
 
-    pokeImgContainer.append(pokeImage);
-    containerDiv.append(pokeImgContainer);
+function grabPokemonSprite(pokemonID, containerDiv){
+    let pokemonShinyContainer = document.createElement('div')
+    pokemonShinyContainer.classList.add('image')
+
+    let pokemonSprite = document.createElement('img')
+    pokemonSprite.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`
+
+    pokemonShinyContainer.append(pokemonSprite);
+    containerDiv.append(pokemonShinyContainer);
+}
+
+function grabPokemonShinySprite(pokemonID, containerDiv){
+    let pokemonShinySpriteContainer = document.createElement('div')
+    pokemonShinySpriteContainer.classList.add('image')
+
+    let pokemonShinySprite = document.createElement('img')
+    pokemonShinySprite.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemonID}.png`
+
+    pokemonShinySpriteContainer.append(pokemonShinySprite);
+    containerDiv.append(pokemonShinySpriteContainer);
 }
 
 function deleteEverything(event){
     event.target.style = 'none';
-    let allPokemonContainer = document.querySelector('#poke-container')
+    let allPokemonContainer = document.querySelector('#search-container')
     allPokemonContainer.innerText = ""
 }
+//search-container

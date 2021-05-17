@@ -1,168 +1,178 @@
 console.log('script imported')
 
+//DOMContentLoaded so the event runs when the page is fully loaded
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#generate-all-pokemon');
-    generateBtn.addEventListener('click', renderAll)
+    let genPokemonButton = document.querySelector('#generate-all-pokemon');
+    genPokemonButton.addEventListener('click', renderAll)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderAll(){
-    console.log('all pokemon test, debug runs')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('all pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchAllPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#alola');
-    generateBtn.addEventListener('click', renderAlola)
+    let genPokemonButton = document.querySelector('#alola');
+    genPokemonButton.addEventListener('click', renderAlola)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderAlola(){
-    console.log('alola test, imported')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('alola pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchAlolaPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#galar');
-    generateBtn.addEventListener('click', renderGalar)
+    let genPokemonButton = document.querySelector('#galar');
+    genPokemonButton.addEventListener('click', renderGalar)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderGalar(){
-    console.log('galar test, debug running')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('galar pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchGalarPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#hoenn');
-    generateBtn.addEventListener('click', renderHoenn)
+    let genPokemonButton = document.querySelector('#hoenn');
+    genPokemonButton.addEventListener('click', renderHoenn)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderHoenn(){
-    console.log('hoenn test, debug running')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('hoenn pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchHoennPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#johto');
-    generateBtn.addEventListener('click', renderJohto)
+    let genPokemonButton = document.querySelector('#johto');
+    genPokemonButton.addEventListener('click', renderJohto)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderJohto(){
-    console.log('johto test, debug run')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('johto pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchJohtoPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#kalos');
-    generateBtn.addEventListener('click', renderKalos)
+    let genPokemonButton = document.querySelector('#kalos');
+    genPokemonButton.addEventListener('click', renderKalos)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderKalos(){
-    console.log('kalos test, debug run')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('kalos pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchKalosPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#kanto');
-    generateBtn.addEventListener('click', renderKanto)
+    let genPokemonButton = document.querySelector('#kanto');
+    genPokemonButton.addEventListener('click', renderKanto)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderKanto(){
-    console.log('kanto test, debug running')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('kanto pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchKantoPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#sinnoh');
-    generateBtn.addEventListener('click', renderSinnoh)
+    let genPokemonButton = document.querySelector('#sinnoh');
+    genPokemonButton.addEventListener('click', renderSinnoh)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderSinnoh(){
-    console.log('sinnoh test, debug running')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('sinnoh pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchSinnohPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    let generateBtn = document.querySelector('#unova');
-    generateBtn.addEventListener('click', renderUnova)
+    let genPokemonButton = document.querySelector('#unova');
+    genPokemonButton.addEventListener('click', renderUnova)
 
-    getDeleteBtn().addEventListener('click', deleteEverything);
+    displayDeleteButton().addEventListener('click', deleteEverything);
 })
 
 function renderUnova(){
-    console.log('unova test, debug running')
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = "";
+    console.log('unova pokemon are Being Fetched')
+    let container = document.querySelector('#poke-container')
+    container.innerText = "";
     fetchUnovaPokemon();
 
-    getDeleteBtn().style.display = 'block'
+    displayDeleteButton().style.display = 'block'
+    console.log('pokemon list is being displayed')
 }
 
-function getDeleteBtn(){
+function displayDeleteButton(){
     return document.querySelector('#delete-btn')
 }
 
 function fetchAllPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=898')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=898') // here we are fetching a ton of pokemon, in a big json package and we work through all of em and trandlate em to display on the site
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
@@ -170,9 +180,9 @@ function fetchAllPokemon(){
 function fetchAlolaPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?offset=721&limit=88')
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
@@ -180,9 +190,9 @@ function fetchAlolaPokemon(){
 function fetchGalarPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?offset=809&limit=79')
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
@@ -190,9 +200,9 @@ function fetchGalarPokemon(){
 function fetchHoennPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?offset=251&limit=135')
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
@@ -200,9 +210,9 @@ function fetchHoennPokemon(){
 function fetchJohtoPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?offset=151&limit=100')
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
@@ -210,9 +220,9 @@ function fetchJohtoPokemon(){
 function fetchKalosPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?offset=649&limit=72')
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
@@ -220,9 +230,9 @@ function fetchKalosPokemon(){
 function fetchKantoPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
@@ -230,57 +240,52 @@ function fetchKantoPokemon(){
 function fetchSinnohPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?offset=386&limit=107')
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){
+            renderPokemon(pokemon);
         })
     })
 }
 
 function fetchUnovaPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?offset=493&limit=166')
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=493&limit=166') // here we are fetching a ton of pokemon
     .then(response => response.json())
-    .then(function(allpokemon){
-        allpokemon.results.forEach(function(pokemon){
-            fetchPokemonData(pokemon);
+    .then(function(pokemonList){
+        pokemonList.results.forEach(function(pokemon){              // and then passing them individually to get there names and urls
+            renderPokemon(pokemon);
         })
     })
 }
 
-function fetchPokemonData(pokemon){
-    let url = pokemon.url // pokemon url waar we de dier uit pakt
+function renderPokemon(pokemon){
+    let url = pokemon.url // here we are fetching each pokemon to get their typings and number (pokedex number)
     fetch(url)
     .then(response => response.json())
-    .then(function(pokeData){
-        renderPokemon(pokeData)
+    .then(function(pokemonData){
+        parseRenderedInfo(pokemonData)
     })
 }
 
-function renderPokemon(pokeData){
-    let allPokemonContainer = document.getElementById('poke-container');
+function parseRenderedInfo(pokemon){
+    let container = document.getElementById('poke-container');
     let pokeContainer = document.createElement("div")
     pokeContainer.classList.add('ui', 'card');
 
-    createPokeImage(pokeData.id, pokeContainer);
+    grabPokemonSprite(pokemon.id, pokeContainer);
 
-    //TODO find away to make this buttons work
-    let pokeName = document.createElement("button")
-    pokeName.innerText = pokeData.name
+    let pokeName = document.createElement("h3")
+    pokeName.innerText = ' #'+ pokemon.id + ' ' + pokemon.name
 
-    let pokeNumber = document.createElement('p')
-    pokeNumber.innerText = `#${pokeData.id}`
-   
     let pokeTypes = document.createElement('ul')
-    createTypes(pokeData.types, pokeTypes) 
-    
+    grabPokemonTypes(pokemon.types, pokeTypes) 
 
-    pokeName.id = `${pokeData.id}` + `${pokeData.name}`
+    pokeName.id = `${pokemon.id}` + `${pokemon.name}`
 
-    pokeContainer.append(pokeName, pokeNumber, pokeTypes);   //appending all details to the pokeContainer div
-    allPokemonContainer.appendChild(pokeContainer);
+    pokeContainer.append(pokeName, pokeTypes);   //appending all details to the pokeContainer div
+    container.appendChild(pokeContainer);
 }
 
-function createTypes(types, ul){
+function grabPokemonTypes(types, ul){
     types.forEach(function(type){
         let typeLi = document.createElement('li');
         typeLi.innerText = type['type']['name'];
@@ -288,27 +293,27 @@ function createTypes(types, ul){
     })
 }
 
-function createPokeImage(pokeID, containerDiv){
-    let pokeImgContainer = document.createElement('div')
-    pokeImgContainer.classList.add('image')
+function grabPokemonSprite(pokemonID, containerDiv){
+    let pokemonImgContainer = document.createElement('div')
+    pokemonImgContainer.classList.add('image')
 
-    let pokeImage = document.createElement('img')
-    pokeImage.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeID}.png`
+    let pokemonSprite = document.createElement('img')
+    pokemonSprite.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`
 
-    pokeImgContainer.append(pokeImage);
-    containerDiv.append(pokeImgContainer);
+    pokemonImgContainer.append(pokemonSprite);
+    containerDiv.append(pokemonImgContainer);
 }
 
 function deleteEverything(event){
     event.target.style = 'none';
-    let allPokemonContainer = document.querySelector('#poke-container')
-    allPokemonContainer.innerText = ""
+    let container = document.querySelector('#poke-container')
+    container.innerText = ""
 
-    let generateBtn = document.createElement('button')
-    generateBtn.innerText = "Generate All Pokemon"
-    generateBtn.id = 'generate-all-pokemon'
-    generateBtn.classList.add('ui', 'secondary', 'button')
-    generateBtn.addEventListener('click', renderAll);
+    let genPokemonButton = document.createElement('button')
+    genPokemonButton.innerText = "Generate All Pokemon"
+    genPokemonButton.id = 'generate-all-pokemon'
+    genPokemonButton.classList.add('globalButton')
+    genPokemonButton.addEventListener('click', renderAll);
 
-    allPokemonContainer.append(generateBtn)
+    container.append(genPokemonButton)
 }

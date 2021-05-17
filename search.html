@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pokemon Experiment</title>
+    <title>search page - Pokedex Viewer</title>
     <script src="JS/search.js"></script>
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -18,16 +18,20 @@
     </div>
     <div id="header" style="padding:50px 16px">
         <h1 class="jumbo" id="header-text">Search page</h1>
-        <div class="knikker-info">
-            <form id="searchForm" name="searchForm" method="post" style="margin: 55px 80;">
-                <h1 class="jumbo" id="header-text"> </h1>
-                <input class="poke name" type="text" name="pokename" placeholder="pokename" required>
-                <input id="generate-pokemon" name="generate-pokemon" type="button" value="Generate Pokemon"></button>
-            </form>
+        <h5 class="boldy" id="header-text" style="text-align: center;">here we can search up detailed information on specific pokemon</h5>
+    </div>
+    <div class="form">
+        <form id="searchForm" name="searchForm" method="post" style="margin: 55px 80;">
+            <h1 class="jumbo" id="header-text"> </h1>
+            <input class="pokename" type="text" name="pokename" placeholder="Fill in the desired pokemon name !">
+            <input id="generate-pokemon" name="generate-pokemon" type="button" value="Generate Pokemon"></button>
+        </form>
+    </div>
+    <div class="pokemon-search">
         <div id="container">
-            <div id="poke-container" class="ui cards">
+            <div id="search-container" class="search-container border" style="padding:50px 16px">
+                <h3>pokemon information will appear in this section after the specified pokemon name had been filled in and the Generate pokemon button is pressed</h3>
             </div>
-        </div>
         </div>
     </div>
 </body>
